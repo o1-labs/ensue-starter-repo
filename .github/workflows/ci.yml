@@ -33,5 +33,18 @@ jobs:
     - name: Start Docker and run script
       run: |
         npm run docker:run
-        sleep 10
+        # Wait for container to be ready
+        for i in {1..30}; do
+          if curl -f http://localhost:8000 >/dev/null 2>&1; then
+            echo "Container is ready!"
+            break
+          fi
+          echo "Waiting for container... ($i/30)"
+          sleep 2
+          if [ $i -eq 30 ]; then
+            echo "Container failed to start, showing logs:"
+            docker logs saffron-agent-demo
+            exit 1
+          fi
+        done
         npm start
