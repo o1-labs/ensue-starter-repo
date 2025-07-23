@@ -12,8 +12,8 @@
   },
   "dependencies": {
     "node-fetch": "^3.3.1",
-    "@o1-labs/saffron-db-ts-client": "v0.0.1-806e015",
-    "@o1-labs/saffron-sdk": "v0.0.1-806e015"
+    "@o1-labs/saffron-db-ts-client": "0.0.1-806e015",
+    "@o1-labs/saffron-sdk": "0.0.1-806e015"
   },
   "devDependencies": {
     "@types/node": "^18.16.0",
