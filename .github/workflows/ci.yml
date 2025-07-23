@@ -34,18 +34,5 @@ jobs:
       run: |
         sudo chmod -R 777 data/
         npm run docker:run
-        # Wait for container to be ready
-        for i in {1..30}; do
-          if curl -f http://localhost:8000 >/dev/null 2>&1; then
-            echo "Container is ready!"
-            break
-          fi
-          echo "Waiting for container... ($i/30)"
-          docker logs saffron-agent-demo
-          sleep 2
-          if [ $i -eq 30 ]; then
-            echo "Container failed to start after 30 attempts"
-            exit 1
-          fi
-        done
+        sleep 10
         npm start
