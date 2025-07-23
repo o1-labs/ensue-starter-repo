@@ -33,4 +33,5 @@ jobs:
     - name: Start Docker and run script
       run: |
         npm run docker:run
+        sleep 10
         npm start
