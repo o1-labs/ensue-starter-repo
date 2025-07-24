@@ -4,16 +4,19 @@
   "description": "Hello world starter for PU Agents",
   "type": "module",
   "main": "dist/index.js",
+  "config": {
+    "saffron_ref": "56ab621"
+  },
   "scripts": {
     "build": "tsc",
     "dev": "tsx src/index.ts",
     "start": "node dist/index.js",
-    "docker:run": "docker run -d -p 8000:8000 -v \"$PWD/data:/saffron/data\" -e RUST_LOG=debug -e SAFFRON_DB_PATH=/saffron/data --name saffron-agent-demo ghcr.io/o1-labs/saffron-agent-demo:56ab621"
+    "docker:run": "docker run -d -p 8000:8000 -v \"$PWD/data:/saffron/data\" -e RUST_LOG=debug -e SAFFRON_DB_PATH=/saffron/data --name saffron-agent-demo ghcr.io/o1-labs/saffron-agent-demo:$npm_package_config_saffron_ref"
   },
   "dependencies": {
     "node-fetch": "^3.3.1",
-    "@o1-labs/saffron-db-ts-client": "0.0.1-56ab621",
-    "@o1-labs/saffron-sdk": "0.0.1-56ab621"
+    "@o1-labs/saffron-db-ts-client": "0.0.1-$npm_package_config_saffron_ref",
+    "@o1-labs/saffron-sdk": "0.0.1-$npm_package_config_saffron_ref"
   },
   "devDependencies": {
     "@types/node": "^18.16.0",
