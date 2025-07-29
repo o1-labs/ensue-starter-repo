@@ -32,6 +32,7 @@ jobs:
     
     - name: Run Docker container
       run: |
+        chmod +777 ./data
         npm run docker:run
         sleep 10
     
