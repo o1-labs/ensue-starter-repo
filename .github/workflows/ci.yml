@@ -35,6 +35,9 @@ jobs:
         npm run docker:run
         sleep 10
     
+    - name: Check Docker container logs
+      run: docker logs saffron-agent-demo
+    
     - name: Test health check
       run: |
         curl -X POST \
