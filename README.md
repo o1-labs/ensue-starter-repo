@@ -23,7 +23,7 @@ Hello world starter for PU Agents using Saffron DB.
 Set up your local `.npmrc` (already configured in this repo):
 
 ```bash
-export NPM_TOKEN=your_github_token_here
+export PROJECT_UNTITLED_TOKEN=your_github_token_here
 ```
 
 #### 3. Docker Authentication
@@ -31,7 +31,7 @@ export NPM_TOKEN=your_github_token_here
 Login to GitHub Container Registry:
 
 ```bash
-echo your_github_token_here | docker login ghcr.io -u your_github_username --password-stdin
+echo $PROJECT_UNTITLED_TOKEN | docker login ghcr.io -u your_github_username --password-stdin
 ```
 
 ## Development
@@ -44,10 +44,10 @@ echo your_github_token_here | docker login ghcr.io -u your_github_username --pas
 
 The CI workflow will automatically run tests on push/PR to main branch.
 
-Add `SAFFRON_TOKEN` as a repository secret in GitHub:
+Add `PROJECT_UNTITLED_TOKEN` as a repository secret in GitHub:
 
 1. Go to repository Settings ’ Secrets and variables ’ Actions
 2. Click "New repository secret"
-3. Name: `SAFFRON_TOKEN`
+3. Name: `PROJECT_UNTITLED_TOKEN`
 4. Value: your GitHub Personal Access Token
 5. Click "Add secret"
