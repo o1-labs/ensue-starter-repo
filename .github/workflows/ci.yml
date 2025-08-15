@@ -22,13 +22,13 @@ jobs:
     - name: Install dependencies
       run: npm install
       env:
-        NPM_TOKEN: ${{ secrets.SAFFRON_TOKEN }}
+        NPM_TOKEN: ${{ secrets.PROJECT_UNTITLED_TOKEN }}
     
     - name: Build project
       run: npm run build
     
     - name: Login to GitHub Container Registry
-      run: echo ${{ secrets.SAFFRON_TOKEN }} | docker login ghcr.io -u ${{ github.actor }} --password-stdin
+      run: echo ${{ secrets.PROJECT_UNTITLED_TOKEN }} | docker login ghcr.io -u ${{ github.actor }} --password-stdin
     
     - name: Run Docker container
       run: |
