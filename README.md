@@ -9,6 +9,7 @@ Hello world starter for PU Agents using Saffron DB.
 - Node.js 18+
 - Docker
 - GitHub Personal Access Token with `read:packages` scope
+- A `project-untitled` token (issued by o1 Labs) for the docker image.
 
 ### Authentication Setup
 
@@ -17,21 +18,20 @@ Hello world starter for PU Agents using Saffron DB.
 1. Go to GitHub Settings ’ Developer settings ’ Personal access tokens ’ Tokens (classic)
 2. Generate new token with `read:packages` scope
 3. Copy the token
+4. Set the token under the env var `PROJECT_UNTITLED_NPM`.
 
-#### 2. Local NPM Authentication
+#### 3. NPM Authentication
 
-Set up your local `.npmrc` (already configured in this repo):
-
-```bash
-export NPM_TOKEN=your_github_token_here
-```
+Assuming you have set the `PROJECT_UNTITLED_NPM` env var, the stock .npmrc file should allow you to download the npm packages
+from the gh npm registry.
 
 #### 3. Docker Authentication
 
-Login to GitHub Container Registry:
+Assuming you have been issued a token for `project-untitled` from o1-labs, set this uner the env var `PROJECT_UNTITLED_DOCKER`.
+This will allow you to set up the gh container registry config
 
 ```bash
-echo your_github_token_here | docker login ghcr.io -u your_github_username --password-stdin
+echo $PROJECT_UNTITLED_DOCKER | docker login ghcr.io -u <YOUR_GITHUB_USERNAME> --password-stdin
 ```
 
 ## Development
@@ -44,10 +44,11 @@ echo your_github_token_here | docker login ghcr.io -u your_github_username --pas
 
 The CI workflow will automatically run tests on push/PR to main branch.
 
-Add `SAFFRON_TOKEN` as a repository secret in GitHub:
+Add `PROJECT_UNTITLED_NPM` and `PROJECT_UNTITLED_DOCKER` as repository secrets in GitHub.
+For example, to add the `PROJECT_UNTITLED_NPM` secret:
 
 1. Go to repository Settings ’ Secrets and variables ’ Actions
 2. Click "New repository secret"
-3. Name: `SAFFRON_TOKEN`
+3. Name: `PROJECT_UNTITLED_NPM`
 4. Value: your GitHub Personal Access Token
 5. Click "Add secret"
