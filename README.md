@@ -17,14 +17,7 @@ Hello world starter for PU Agents using Saffron DB.
 1. Go to GitHub Settings ’ Developer settings ’ Personal access tokens ’ Tokens (classic)
 2. Generate new token with `read:packages` scope
 3. Copy the token
-
-#### 2. Local NPM Authentication
-
-Set up your local `.npmrc` (already configured in this repo):
-
-```bash
-export PROJECT_UNTITLED_TOKEN=your_github_token_here
-```
+4. Set the token under the env var `PROJECT_UNTITLED_TOKEN`.
 
 #### 3. Docker Authentication
 
