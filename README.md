@@ -65,7 +65,7 @@ docker run --rm -it \
   -p 8000:8000 \
   -v $(pwd)/data:/data \
   -v $(pwd)/srs:/srs \
-  ghcr.io/o1-labs/project-untitled:6246650 \
+  ghcr.io/o1-labs/project-untitled:<version> \
   saffron-db \
   --db-path /data/db
 ```
