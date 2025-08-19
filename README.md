@@ -49,13 +49,26 @@ export PROJECT_UNTITLED_DOCKER=ghp_************ # o1 issued access token for doc
 echo $PROJECT_UNTITLED_DOCKER | docker login ghcr.io -u <YOUR_GITHUB_USERNAME> --password-stdin
 ```
 
-## Development
+#### 4 Pull the image and start the server
+
+```bash
+docker pull ghcr.io/o1-labs/project-untitled:<version>
+docker run --rm -it \
+  -p 8000:8000 \
+  -v $(pwd)/data:/data \
+  -v $(pwd)/srs:/srs \
+  ghcr.io/o1-labs/project-untitled:6246650 \
+  saffron-db \
+  --db-path /data/db
+```
+
+#### 5 Development
 
 - `npm run dev` - Run in development mode with hot reload
 - `npm run build` - Build TypeScript to JavaScript
 - `npm start` - Run the built application
 
-#### 4. CI/CD Setup
+#### 6. CI/CD Setup
 
 The CI workflow will automatically run tests on push/PR to main branch.
 
