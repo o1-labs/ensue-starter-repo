@@ -6,7 +6,7 @@ Hello world starter for PU Agents using Saffron DB.
 
 ### Prerequisites
 
-- Node.js 18+
+- Node.js 22
 - Docker
 - GitHub Personal Access Token with `read:packages` scope
 - A `project-untitled` token (issued by o1 Labs) for the docker image.
