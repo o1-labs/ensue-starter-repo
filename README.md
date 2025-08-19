@@ -11,19 +11,33 @@ Hello world starter for PU Agents using Saffron DB.
 - GitHub Personal Access Token with `read:packages` scope
 - A `project-untitled` token (issued by o1 Labs) for the docker image.
 
+### Clone
+```bash
+git clone git@github.com:o1-labs/pu-starter-repo.git
+cd pu-starter-repo
+```
+
 ### Authentication Setup
 
 #### 1. Create GitHub Personal Access Token
 
-1. Go to GitHub Settings ’ Developer settings ’ Personal access tokens ’ Tokens (classic)
+1. Go to GitHub Settings ï¿½ Developer settings ï¿½ Personal access tokens ï¿½ Tokens (classic)
 2. Generate new token with `read:packages` scope
 3. Copy the token
 4. Set the token under the env var `PROJECT_UNTITLED_NPM`.
+```bash
+# classic gh token with package:read set
+export PROJECT_UNTITLED_NPM=ghp_************
+```
 
-#### 3. NPM Authentication
+#### 2. NPM Authentication
 
 Assuming you have set the `PROJECT_UNTITLED_NPM` env var, the stock .npmrc file should allow you to download the npm packages
 from the gh npm registry.
+
+```bash
+npm install
+```
 
 #### 3. Docker Authentication
 
@@ -31,6 +45,7 @@ Assuming you have been issued a token for `project-untitled` from o1-labs, set t
 This will allow you to set up the gh container registry config
 
 ```bash
+export PROJECT_UNTITLED_DOCKER=ghp_************ # o1 issued access token for docker registry access
 echo $PROJECT_UNTITLED_DOCKER | docker login ghcr.io -u <YOUR_GITHUB_USERNAME> --password-stdin
 ```
 
@@ -47,7 +62,7 @@ The CI workflow will automatically run tests on push/PR to main branch.
 Add `PROJECT_UNTITLED_NPM` and `PROJECT_UNTITLED_DOCKER` as repository secrets in GitHub.
 For example, to add the `PROJECT_UNTITLED_NPM` secret:
 
-1. Go to repository Settings ’ Secrets and variables ’ Actions
+1. Go to repository Settings ï¿½ Secrets and variables ï¿½ Actions
 2. Click "New repository secret"
 3. Name: `PROJECT_UNTITLED_NPM`
 4. Value: your GitHub Personal Access Token
