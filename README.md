@@ -28,7 +28,7 @@ cd pu-starter-repo
 export PROJECT_UNTITLED_NPM=ghp_************
 ```
 
-##### Create Your Own
+##### [Create Your Own](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens#personal-access-tokens-classic)
 1. Go to GitHub Settings � Developer settings � Personal access tokens � Tokens (classic)
 2. Generate new token with `read:packages` scope
 3. Copy the token
