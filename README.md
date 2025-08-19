@@ -19,8 +19,16 @@ cd pu-starter-repo
 
 ### Authentication Setup
 
-#### 1. Create GitHub Personal Access Token
+#### 1. Use a GitHub Personal Access Token
 
+##### Use the Issued Token
+1. If you have a `project-untitled` token issued by o1 labs you can just set it to the `PROJECT_UNTITLED_NPM` env var
+```bash
+# project untitled token issued by o1 labs
+export PROJECT_UNTITLED_NPM=ghp_************
+```
+
+##### Create Your Own
 1. Go to GitHub Settings � Developer settings � Personal access tokens � Tokens (classic)
 2. Generate new token with `read:packages` scope
 3. Copy the token
