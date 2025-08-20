@@ -1,7 +1,7 @@
 {
-  "name": "pu-hello-world",
+  "name": "ensue-hello-world",
   "version": "1.0.0",
-  "description": "Hello world starter for PU Agents",
+  "description": "Hello world starter for Ensue Agents",
   "type": "module",
   "main": "dist/index.js",
   "scripts": {

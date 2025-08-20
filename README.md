@@ -1,6 +1,6 @@
-# PU Hello World
+# Ensue Hello World
 
-Hello world starter for PU Agents using Saffron DB.
+Hello world starter for Ensue Agents using Ensue DB.
 
 ## Setup
 
@@ -13,8 +13,8 @@ Hello world starter for PU Agents using Saffron DB.
 
 ### Clone
 ```bash
-git clone git@github.com:o1-labs/pu-starter-repo.git
-cd pu-starter-repo
+git clone git@github.com:o1-labs/ensue-starter-repo.git
+cd ensue-starter-repo
 ```
 
 ### Authentication Setup
