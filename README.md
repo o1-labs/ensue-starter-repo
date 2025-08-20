@@ -22,9 +22,9 @@ cd ensue-starter-repo
 #### 1. Use a GitHub Personal Access Token
 
 ##### Use the Issued Token
-1. If you have a `project-untitled` token issued by o1 labs you can just set it to the `ENSUE_NPM` env var
+1. If you have an `ensue` token issued by o1 labs you can just set it to the `ENSUE_NPM` env var
 ```bash
-# project untitled token issued by o1 labs
+# ensue token issued by o1 labs
 export ENSUE_NPM=ghp_************
 ```
 
@@ -60,12 +60,12 @@ echo $ENSUE_DOCKER | docker login ghcr.io -u <YOUR_GITHUB_USERNAME> --password-s
 #### 4 Pull the image and start the server
 
 ```bash
-docker pull ghcr.io/o1-labs/project-untitled:<version>
+docker pull ghcr.io/o1-labs/ensue:<version>
 docker run --rm -it \
   -p 8000:8000 \
   -v $(pwd)/data:/data \
   -v $(pwd)/srs:/srs \
-  ghcr.io/o1-labs/project-untitled:<version> \
+  ghcr.io/o1-labs/ensue:<version> \
   saffron-db \
   --db-path /data/db
 ```
