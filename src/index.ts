@@ -1,4 +1,4 @@
-import { SaffronClient, RpcClient } from '@o1-labs/saffron-db-ts-client';
+import { SaffronClient, RpcClient } from '@o1-labs/ensue-db-ts-client';
 
 async function main() {
   console.log('🚀 Starting Saffron Hello World...');
