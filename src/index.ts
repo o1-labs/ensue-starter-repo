@@ -1,13 +1,13 @@
-import { SaffronClient, RpcClient } from '@o1-labs/ensue-db-ts-client';
+import { EnsueClient, RpcClient } from '@o1-labs/ensue-db-ts-client';
 
 async function main() {
-  console.log('🚀 Starting Saffron Hello World...');
+  console.log('🚀 Starting Ensue Hello World...');
   
   // Initialize RPC client with default settings (localhost:8000)
   const rpcClient = new RpcClient();
   
-  // Initialize SaffronClient with RPC client
-  const client = await SaffronClient.initialize(rpcClient);
+  // Initialize EnsueClient with RPC client
+  const client = await EnsueClient.initialize(rpcClient);
 
   try {
     console.log('🔍 Calling health_check endpoint...');
@@ -18,7 +18,7 @@ async function main() {
     process.exit(1);
   }
 
-  console.log('🎉 Saffron Hello World completed successfully!');
+  console.log('🎉 Ensue Hello World completed successfully!');
 }
 
 main().catch((error) => {
