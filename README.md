@@ -66,7 +66,7 @@ docker run --rm -it \
   -v $(pwd)/data:/data \
   -v $(pwd)/srs:/srs \
   ghcr.io/o1-labs/ensue:<version> \
-  saffron-db \
+  ensue-db \
   --db-path /data/db
 ```
 
