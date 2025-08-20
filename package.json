@@ -8,12 +8,12 @@
     "build": "tsc",
     "dev": "tsx src/index.ts",
     "start": "node dist/index.js",
-    "docker:run": "docker run -d -p 8000:8000 -v \"$PWD/data:/saffron/data\" -e RUST_LOG=debug -e SAFFRON_DB_PATH=/saffron/data --name ensue-agent-demo ghcr.io/o1-labs/ensue:6246650"
+    "docker:run": "docker run -d -p 8000:8000 -v \"$PWD/data:/ensue/data\" -e RUST_LOG=debug -e ENSUE_DB_PATH=/ensue/data --name ensue-agent-demo ghcr.io/o1-labs/ensue:0f5f34b"
   },
   "dependencies": {
     "node-fetch": "^3.3.1",
-    "@o1-labs/ensue-db-ts-client": "0.1.0-6246650",
-    "@o1-labs/ensue-sdk": "0.1.0-6246650"
+    "@o1-labs/ensue-db-ts-client": "0.2.0-0f5f34b",
+    "@o1-labs/ensue-sdk": "0.2.0-0f5f34b"
   },
   "devDependencies": {
     "@types/node": "^18.16.0",
